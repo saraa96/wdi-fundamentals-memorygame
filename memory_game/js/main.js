@@ -1,6 +1,5 @@
 
 console.log("Up and running!");
-alert('Hello, friends.');
 var score=0 ;
 var cards = [
 {
@@ -28,10 +27,10 @@ function checkForMatch(){
   if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
     score++;
   alert("You found a match!");
-  alert("Your score Is : "+ this.score);
+
 } else {
   alert("Sorry, try again.");
-  alert("Your score Is : "+ score);
+
 }
 }
 
@@ -53,10 +52,14 @@ var createBoard = function(){
      cardElement.setAttribute('data-id', i);
      cardElement.addEventListener("click", flipCard);
      document.getElementById("game-board").appendChild(cardElement);
+
   }
+}
+function myFunction() {
+  var popup = document.getElementById("myPopup");
+  popup.classList.toggle("show");
+document.getElementById("myPopup").innerHTML = "Your score " + score;
 }
 
 
-
 createBoard();
-location.reset();

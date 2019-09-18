@@ -27,13 +27,23 @@ margin: 35px auto;
 img{
   margin: 40px 8px;
 }
-h2 , h3 {
+h2 {
   font-family: "Raleway", sans-serif;
   color: #0D2C40;
   font-weight: 400;
   letter-spacing: 1px;
   font-weight: 600;
   font-size: 20px;
+  text-transform: uppercase;
+
+}
+h3 {
+  font-family: "Raleway", sans-serif;
+  color: #F15B31;
+  font-weight: 400;
+  letter-spacing: 1px;
+  font-weight: 600;
+  font-size: 25px;
   text-transform: uppercase;
 
 }
@@ -100,4 +110,37 @@ font-size: 0;
 }
 a:hover {
 border-color: white;
+}
+
+
+
+.popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}
+
+/* The actual popup */
+.popup .popuptext {
+  visibility: hidden;
+  width: 160px;
+  background-color: #555;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 8px 0;
+  position: absolute;
+  bottom: 125%;
+  left: 50%;
+  margin-left: -80px;
+}
+
+
+/* Toggle this class - hide and show the popup */
+.popup .show {
+  visibility: visible;
 }
