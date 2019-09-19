@@ -22,17 +22,17 @@ suit: "diamonds",
 cardImage : "images/king-of-diamonds.png"
 }
 ];
-const cardsInPlay = [];
+var cardsInPlay = [];
 function checkForMatch(){
   let x ;
   if (cardsInPlay[0].rank === cardsInPlay[1].rank) {
     score++;
-x = "You found a match!";
-
+alert("You found a match!");
+flipAgian();
 } else {
-x = "Sorry, try again.";
+alert("Sorry, try again.");
+flipAgian();
 }
-alert(x);
 }
 
 function flipCard(){
@@ -42,12 +42,7 @@ this.setAttribute('src', cards[cardsId].cardImage);
 if (cardsInPlay.length === 2 ){
 checkForMatch();
 }
-else if (cardsInPlay.length ===3 ){
-  flipAgian();
-
 }
-}
-
 var createBoard = function(){
   for (var i = 0; i < cards.length; i++) {
     var cardElement = document.createElement('img');
@@ -55,23 +50,17 @@ var createBoard = function(){
      cardElement.setAttribute('data-id', i);
      cardElement.addEventListener("click", flipCard);
      document.getElementById("game-board").appendChild(cardElement);
-
   }
 }
 function flipAgian(){
-var removeCards = document.getElementById("game-board");
-removeCards.innerHTML = "";
-for(var i = 2 ; i>=cardsInPlay.length ; i--){
-  cardsInPlay[i].pop();
-}
+document.getElementById("game-board").innerHTML = "";
+	cardsInPlay = [];
 createBoard();
 }
-
-
 function showScore() {
   var popup = document.getElementById("myPopup");
   popup.classList.toggle("show");
-document.getElementById("myPopup").innerHTML = "Your score " + score;
+document.getElementById("myPopup").innerHTML = "Your score is " + score;
 }
 
 createBoard();

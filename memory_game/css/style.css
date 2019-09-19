@@ -112,10 +112,9 @@ a:hover {
 border-color: white;
 }
 
-
-
 .popup {
   position: relative;
+
   display: inline-block;
   cursor: pointer;
   user-select: none;
